@@ -26,7 +26,15 @@ export function ToDo() {
 					return (
 						<li key={index}>
 							{item}
-							<button>x</button>
+							<button
+								onClick={() => {
+									const newerTodos = todos.filter((e, i) => {
+										return i !== index;
+									});
+									setTodos(newerTodos);
+								}}>
+								x
+							</button>
 						</li>
 					);
 				})}
