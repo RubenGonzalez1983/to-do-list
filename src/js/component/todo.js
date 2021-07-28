@@ -1,15 +1,8 @@
 import React from "react";
 
 export function ToDo() {
-	const [todos, setTodos] = React.useState([
-		"task one",
-		"task two",
-		"task three"
-	]);
+	const [todos, setTodos] = React.useState([]);
 	const [task, setTask] = React.useState("");
-	const toDosLi = todos.map((item, index) => {
-		return <li key={index}>{item}</li>;
-	});
 
 	return (
 		<div>
@@ -19,9 +12,25 @@ export function ToDo() {
 				onChange={event => {
 					setTask(event.target.value);
 				}}
+				onKeyPress={event => {
+					if (event.key === "Enter") {
+						const newTodos = todos.concat([task]);
+						setTodos(newTodos);
+						setTask("");
+					}
+				}}
 			/>
 
-			<ul>{toDosLi} </ul>
+			<ul>
+				{todos.map((item, index) => {
+					return (
+						<li key={index}>
+							{item}
+							<button>x</button>
+						</li>
+					);
+				})}
+			</ul>
 		</div>
 	);
 }
