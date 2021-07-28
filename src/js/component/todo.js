@@ -33,7 +33,7 @@ export function ToDo() {
 									});
 									setTodos(newerTodos);
 								}}>
-								x
+								delete
 							</button>
 						</li>
 					);
