@@ -9,6 +9,17 @@
     padding-top:45px
 }
 .ul{
-    list-style-type: none
+    list-style-type: none;
     
+}
+
+.button{
+  transition-duration: 0.4s;
+  
+}
+
+.button:hover {
+  background-color: #1889d4; 
+  color: white;
+  
 }

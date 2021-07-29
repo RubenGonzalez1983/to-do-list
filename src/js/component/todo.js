@@ -29,13 +29,14 @@ export function ToDo() {
 						<li key={index}>
 							{item}
 							<button
+								className="button"
 								onClick={() => {
 									const newerTodos = todos.filter((e, i) => {
 										return i !== index;
 									});
 									setTodos(newerTodos);
 								}}>
-								delete
+								Done!
 							</button>
 						</li>
 					);
