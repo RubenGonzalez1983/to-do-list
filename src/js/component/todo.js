@@ -5,8 +5,10 @@ export function ToDo() {
 	const [task, setTask] = React.useState("");
 
 	return (
-		<div>
+		<div className="bigdiv">
+			<h1 className="header">Here is a very basic todo list</h1>
 			<input
+				className="input"
 				type="text"
 				value={task}
 				onChange={event => {
@@ -21,7 +23,7 @@ export function ToDo() {
 				}}
 			/>
 
-			<ul>
+			<ul className="ul">
 				{todos.map((item, index) => {
 					return (
 						<li key={index}>
